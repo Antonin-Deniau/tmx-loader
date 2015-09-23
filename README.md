@@ -46,6 +46,14 @@ var data = require('dsv?delimiter=;!./data.csv'); //load data seperated by semic
 var data = require('dsv?delimiter=x!./data.csv'); //load data seperated by an 'x'
 ```
 
+**rows**
+
+Tells the loader if it should load only rows without headers. *Default: 'false'*
+
+Examples:
+``` javascript
+var data = require('dsv?rows=true!./data.csv'); //load only rows
+```
 ## Credits
 
 * Inspired by webpack's [json-loader](https://github.com/webpack/json-loader)

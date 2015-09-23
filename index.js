@@ -9,7 +9,7 @@ module.exports = function(text) {
   var delimiter = query.delimiter || ',';
   var parser = dsv(delimiter);
 
-  if ( query.raw ) {
+  if ( query.rows ) {
       var res = parser.parseRows(text);
   } else {
       var res = parser.parse(text);
