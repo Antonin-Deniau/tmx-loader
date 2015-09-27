@@ -6,7 +6,7 @@ var path = require("path");
 module.exports = function(text) {
   var callback = this.async();
   var query = loaderUtils.parseQuery(this.query);
-  var grid = [];
+  var grids = {};
 
   tmx.parse(text, path.resolve(query.tilepath), function(err, map) {
     if(err) return callback(err);
@@ -15,16 +15,16 @@ module.exports = function(text) {
     var height = map.height;
 
     _.each(map.layers, function(layer) {
-      if (layer.name == "map") {
-        for (var x = 0; x < width; x++) {
-          grid.push([]);
-	  for (var y = 0; y < height; y++) {
-            grid[x].push(layer.tileAt(x,y).gid);
-	  }
-        }
-      } else {
+      grids[layer.name] = [];
+
+      for (var x = 0; x < width; x++) {
+        grid[layer.name].push([]);
+	for (var y = 0; y < height; y++) {
+          grid[layer.name][x].push(layer.tileAt(x,y).gid);
+	}
       }
     });
+
     callback(null, 'module.exports = ' + JSON.stringify(grid));
   });
 };
