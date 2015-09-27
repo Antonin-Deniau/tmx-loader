@@ -1,19 +1,14 @@
-/*  dsv-loader: a dsv loader for webpack
-    built using dsv by Mike Bostock */
-
 var loaderUtils = require('loader-utils');
-var dsv = require('dsv');
+var tmx = require('tmx-parser');
 
 module.exports = function(text) {
-  var query = loaderUtils.parseQuery(this.query);
-  var delimiter = query.delimiter || ',';
-  var parser = dsv(delimiter);
+  //var query = loaderUtils.parseQuery(this.query);
 
-  if ( query.rows ) {
-      var res = parser.parseRows(text);
-  } else {
-      var res = parser.parse(text);
-  }
+  tmx.parse(text, "", function(err, map) {
+    if (err) throw err;
+    console.log(map);
+    var res = map;
+  });
 
   return 'module.exports = ' + JSON.stringify(res);
 }
