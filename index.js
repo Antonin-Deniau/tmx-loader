@@ -20,7 +20,13 @@ module.exports = function(text) {
       for (var x = 0; x < width; x++) {
         grids[layer.name].push([]);
 	for (var y = 0; y < height; y++) {
-          grids[layer.name][x].push(layer.tileAt(x,y).gid);
+          var tile = layer.tileAt(x,y);
+
+          if (tile) {
+            grids[layer.name][x].push(tile.gid);
+          } else {
+            grids[layer.name][x].push(undefined);
+          }
 	}
       }
     });
