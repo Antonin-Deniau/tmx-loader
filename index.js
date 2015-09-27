@@ -18,13 +18,13 @@ module.exports = function(text) {
       grids[layer.name] = [];
 
       for (var x = 0; x < width; x++) {
-        grid[layer.name].push([]);
+        grids[layer.name].push([]);
 	for (var y = 0; y < height; y++) {
-          grid[layer.name][x].push(layer.tileAt(x,y).gid);
+          grids[layer.name][x].push(layer.tileAt(x,y).gid);
 	}
       }
     });
 
-    callback(null, 'module.exports = ' + JSON.stringify(grid));
+    callback(null, 'module.exports = ' + JSON.stringify(grids));
   });
 };
