@@ -7,7 +7,7 @@ module.exports = function(text) {
   var query = loaderUtils.parseQuery(this.query);
   var grid = [];
 
-  tmx.parse(text, "../areas/tilemap.tmx", function(err, map) {
+  tmx.parse(text, query.tilepath, function(err, map) {
     if(err) return callback(err);
 
     var width = map.width;

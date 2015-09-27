@@ -1,5 +1,5 @@
 {
-  "name": "dsv-loader",
+  "name": "webpack-tmx-loader",
   "version": "1.0.0",
   "description": "A webpack module to load tmx tiled map (e.g. .tmx) files.",
   "keywords": [
