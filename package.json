@@ -13,8 +13,9 @@
     "email": "antonin.deniau@gmail.com"
   },
   "dependencies": {
-    "tmx-parser": "^1.4.0",
-    "loader-utils": "^0.2.6"
+    "loader-utils": "^0.2.11",
+    "lodash": "^3.10.1",
+    "tmx-parser": "^1.4.0"
   },
   "licenses": [
     {
