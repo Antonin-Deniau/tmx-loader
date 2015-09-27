@@ -1,13 +1,14 @@
 var tmx = require('tmx-parser');
 var _   = require('lodash');
 var loaderUtils = require('loader-utils');
+var path = require("path");
 
 module.exports = function(text) {
   var callback = this.async();
   var query = loaderUtils.parseQuery(this.query);
   var grid = [];
 
-  tmx.parse(text, query.tilepath, function(err, map) {
+  tmx.parse(text, path.resolve(query.tilepath), function(err, map) {
     if(err) return callback(err);
 
     var width = map.width;
