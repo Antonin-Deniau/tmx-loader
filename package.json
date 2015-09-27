@@ -1,5 +1,5 @@
 {
-  "name": "webpack-tmx-loader",
+  "name": "roguelike-map-loader",
   "version": "1.0.0",
   "description": "A webpack module to load tmx tiled map (e.g. .tmx) files.",
   "keywords": [
