@@ -1,60 +1,48 @@
-# Webpack dsv loader
+# Webpack tmx loader
 
-A Webpack plugin for loading dsv files (for example .csv).
+A Webpack plugin for loading tmx files (for example .tmx).
 
 ## Installation
 
 Install via npm:
 
 ```
-npm install --save dsv-loader
+npm install --save tmx-loader
 ```
 
 ## Usage
 
-You can require dsv data like this:
+You can require tmx map like this:
 
 ``` javascript
-var data = require('dsv!./data.csv');
-// => returns data.csv content as json parsed object
+var data = require('tmx!./map.tmx');
+// => returns map.tmx content as json parsed object
 ```
 
-The loader will translate the ```data.csv``` file into a JSON Object.
+The loader will translate the ```map.tmx``` file into a JSON Object.
 
 #### Usage with webpack.config
 
-To require dsv files like this: ```require('data.csv')``` , you can add the dsv-loader to your webpack config:
+To require tmx files like this: ```require('map.tmx')``` , you can add the tmx-loader to your webpack config:
 
 ``` javascript
 module : {
   loaders : [
-    { test: /\.csv?$/, loader: 'dsv-loader' } //will load all .csv files with dsv-loader by default
+    { test: /\.tmx?$/, loader: 'tmx-loader' } //will load all .tmx files with tmx-loader by default
   ]
 }
 ```
 
 #### Options
 
-**delimiter**
+**tilepath**
 
-Tells the loader which delimiter is used to seperate the data. *Default: ','*
-
-Examples:
-``` javascript
-var data = require('dsv?delimiter=;!./data.csv'); //load data seperated by semicolon
-
-var data = require('dsv?delimiter=x!./data.csv'); //load data seperated by an 'x'
-```
-
-**rows**
-
-Tells the loader if it should load only rows without headers. *Default: 'false'*
+Tells the loader which tilemap is used to display the data. *Default: ''*
 
 Examples:
 ``` javascript
-var data = require('dsv?rows=true!./data.csv'); //load only rows
+var data = require('tmx?tilepath=./tilemap.tsx!./map.tmx'); //load tilemap
 ```
+
 ## Credits
-
-* Inspired by webpack's [json-loader](https://github.com/webpack/json-loader)
-* DSV parsing done with [dsv](https://github.com/mbostock/dsv) by Mike Bostock
+* TMX parsing done with [node-tmx-parser](https://github.com/andrewrk/node-tmx-parser) by Andrew Kelley
