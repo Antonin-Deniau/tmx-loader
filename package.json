@@ -22,6 +22,7 @@
       "type": "MIT",
       "url": "http://opensource.org/licenses/mit-license.html"
     }
+<<<<<<< HEAD
   ],
   "gitHead": "6ec4592cc6b3cc5cf97554bee7999533cec477bf",
   "_id": "tmx-loader@1.0.0",
@@ -46,4 +47,7 @@
   ],
   "directories": {},
   "_resolved": "https://registry.npmjs.org/tmx-loader/-/tmx-loader-1.0.0.tgz"
+=======
+  ]
+>>>>>>> 6ec4592cc6b3cc5cf97554bee7999533cec477bf
 }
