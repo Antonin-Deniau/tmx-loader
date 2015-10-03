@@ -22,32 +22,5 @@
       "type": "MIT",
       "url": "http://opensource.org/licenses/mit-license.html"
     }
-<<<<<<< HEAD
-  ],
-  "gitHead": "6ec4592cc6b3cc5cf97554bee7999533cec477bf",
-  "_id": "tmx-loader@1.0.0",
-  "scripts": {},
-  "_shasum": "15a28d65dfb38f2f91e0583b44d9ce5413a63417",
-  "_from": "tmx-loader@1.0.0",
-  "_npmVersion": "2.13.3",
-  "_nodeVersion": "3.3.0",
-  "_npmUser": {
-    "name": "deniau.antonin",
-    "email": "antonin.deniau@gmail.com"
-  },
-  "dist": {
-    "shasum": "15a28d65dfb38f2f91e0583b44d9ce5413a63417",
-    "tarball": "http://registry.npmjs.org/tmx-loader/-/tmx-loader-1.0.0.tgz"
-  },
-  "maintainers": [
-    {
-      "name": "deniau.antonin",
-      "email": "antonin.deniau@gmail.com"
-    }
-  ],
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/tmx-loader/-/tmx-loader-1.0.0.tgz"
-=======
   ]
->>>>>>> 6ec4592cc6b3cc5cf97554bee7999533cec477bf
 }
