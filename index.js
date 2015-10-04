@@ -33,6 +33,9 @@ module.exports = function(text) {
                 }
             }
             if (layer.type == "object") {
+                _.each(layer.objects, function(object){
+                    grids[layer.name].push(object);
+                });
             }
 
         });
