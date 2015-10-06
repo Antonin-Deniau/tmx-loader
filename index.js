@@ -25,7 +25,7 @@ module.exports = function(text) {
                         var tile = layer.tileAt(x,y);
 
                         if (tile) {
-                            grids[layer.name][x].push(tile.gid);
+                            grids[layer.name][x].push(tile);
                         } else {
                             grids[layer.name][x].push(undefined);
                         }
