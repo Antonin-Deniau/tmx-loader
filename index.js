@@ -4,6 +4,7 @@ var loaderUtils = require('loader-utils');
 var path = require("path");
 
 module.exports = function(text) {
+    this.cacheable();
     var callback = this.async();
     var query = loaderUtils.parseQuery(this.query);
     var grids = {};
