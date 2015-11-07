@@ -15,29 +15,33 @@ module.exports = function(text) {
         var height = map.height;
 
         _.each(map.layers, function(layer) {
-            grids[layer.name] = [];
-
             if (layer.type == "tile") {
+                grids[layer.name] = {};
                 for (var x = 0; x < width; x++) {
-                    grids[layer.name].push([]);
-
                     for (var y = 0; y < height; y++) {
                         var tile = layer.tileAt(x,y);
 
                         if (tile) {
-                            grids[layer.name][x].push(tile);
+                            grids[layer.name][x + "," + y] = {
+                                gid: tile.gid,
+                                properties: tile.properties
+                            };
                         } else {
-                            grids[layer.name][x].push(undefined);
+                            grids[layer.name][x + "," + y] = undefined;
                         }
                     }
                 }
             }
             if (layer.type == "object") {
+                grids[layer.name] = [];
                 _.each(layer.objects, function(object){
-                    grids[layer.name].push(object);
+                    grids[layer.name].push({
+                        name: object.name,
+                        gid: object.gid,
+                        properties: object.properties
+                    });
                 });
             }
-
         });
 
         callback(null, 'module.exports = ' + JSON.stringify(grids));
