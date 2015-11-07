@@ -1,6 +1,6 @@
 {
   "name": "tmx-loader",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A webpack module to load tmx tiled map (e.g. .tmx) files.",
   "keywords": [
     "webpack",
