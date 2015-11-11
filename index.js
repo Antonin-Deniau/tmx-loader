@@ -35,7 +35,6 @@ module.exports = function(text) {
             }
             if (layer.type == "object") {
                 _.each(layer.objects, function(object){
-                  console.log(object);
                     grids[layer.name][object.x + "," + object.y] = {
                         name: object.name,
                         type: object.type,
