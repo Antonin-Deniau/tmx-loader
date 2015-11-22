@@ -16,8 +16,8 @@ module.exports = function(text) {
         var height = map.height;
 
         _.each(map.layers, function(layer) {
-            grids[layer.name] = {}
             if (layer.type == "tile") {
+                grids[layer.name] = {};
                 for (var x = 0; x < width; x++) {
                     for (var y = 0; y < height; y++) {
                         var tile = layer.tileAt(x,y);
@@ -34,13 +34,16 @@ module.exports = function(text) {
                 }
             }
             if (layer.type == "object") {
+                grids[layer.name] = [];
                 _.each(layer.objects, function(object){
-                    grids[layer.name][object.x + "," + object.y] = {
+                    grids[layer.name].push({
                         name: object.name,
                         type: object.type,
                         gid: object.gid,
+                        x: object.x,
+                        y: object.y,
                         properties: object.properties
-                    };
+                    });
                 });
             }
         });
