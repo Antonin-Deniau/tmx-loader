@@ -1,4 +1,5 @@
 # Webpack tmx loader
+[![NPM](https://nodei.co/npm/tmx-loader.png)](https://nodei.co/npm/tmx-loader/)
 
 A Webpack plugin for loading tmx files (for example .tmx).
 
