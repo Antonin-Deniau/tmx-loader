@@ -15,6 +15,8 @@ module.exports = function(text) {
         var width = map.width;
         var height = map.height;
 
+        grids["properties"] = map.properties;
+
         _.each(map.layers, function(layer) {
             if (layer.type == "tile") {
                 grids[layer.name] = {};
